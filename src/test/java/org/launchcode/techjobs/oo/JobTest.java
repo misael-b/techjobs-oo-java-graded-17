@@ -1,11 +1,14 @@
 package org.launchcode.techjobs.oo;
 
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
 public class JobTest {
     //TODO: Create your unit tests here
+
     @Test
     public void testSettingJobId(){
         Job job1 = new Job();
@@ -40,5 +43,49 @@ public class JobTest {
 
         assertFalse(job1.getId() == job2.getId());
 
+    }
+
+
+
+    @Test
+    public void testToStringStartsAndEndsWithNewLine(){
+        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
+                new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        String string = job.toString();
+
+        assertTrue(string.startsWith(System.lineSeparator()));
+        assertTrue(string.endsWith(System.lineSeparator()));
+    }
+
+    @Test
+    public void testToStringContainsCorrectLabelsAndData(){
+        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
+                new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        String output = "\n"+
+                "ID: 1\n" +
+                "Name: Product tester\n" +
+                "Employer: ACME\n" +
+                "Location: Desert\n" +
+                "Position Type: Quality control\n" +
+                "Core Competency: Persistence\n" ;
+        assertEquals(output, job.toString());
+
+    }
+
+    @Test
+    public void testToStringHandlesEmptyField(){
+        Job job = new Job("Product tester", new Employer("ACME"), new Location(""),
+                new PositionType("Quality control"), new CoreCompetency(""));
+
+        String output = "\n"+
+                "ID: 1\n" +
+                "Name: Product tester\n" +
+                "Employer: ACME\n" +
+                "Location: Data not available\n" +
+                "Position Type: Quality control\n" +
+                "Core Competency: Data not available\n" ;
+        assertEquals(output, job.toString());
     }
 }

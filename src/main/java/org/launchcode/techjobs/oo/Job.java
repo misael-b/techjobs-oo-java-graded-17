@@ -34,6 +34,18 @@ public class Job {
     //  match.
 
     @Override
+    public String toString(){
+        return ("\n" +
+                "ID: "+ id+
+                "\nName: " + (name.isEmpty() ? "Data not available" : name) +
+                "\nEmployer: " + (employer.getValue().isEmpty() ? "Data not available" : employer) +
+                "\nLocation: " + (location.getValue().isEmpty() ? "Data not available" : location) +
+                "\nPosition Type: " + (positionType.getValue().isEmpty() ? "Data not available" : positionType)+
+                "\nCore Competency: " + (coreCompetency.getValue().isEmpty() ? "Data not available" : coreCompetency)+
+                "\n");
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
