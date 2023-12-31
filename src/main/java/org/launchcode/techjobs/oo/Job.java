@@ -35,6 +35,9 @@ public class Job {
 
     @Override
     public String toString(){
+        if (name == null){
+            return "OOPS! This job does not seem to exist.";
+        }
         return ("\n" +
                 "ID: "+ id+
                 "\nName: " + (name.isEmpty() ? "Data not available" : name) +

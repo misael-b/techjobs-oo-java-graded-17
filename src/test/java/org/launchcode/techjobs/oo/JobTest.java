@@ -88,4 +88,12 @@ public class JobTest {
                 "Core Competency: Data not available\n" ;
         assertEquals(output, job.toString());
     }
+
+    @Test
+    public void testToStringHandlesEmptyInstantiation(){
+        Job job = new Job();
+        String output = "OOPS! This job does not seem to exist.";
+
+        assertEquals(output, job.toString());
+    }
 }
