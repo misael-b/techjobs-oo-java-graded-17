@@ -64,7 +64,7 @@ public class JobTest {
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         String output = "\n"+
-                "ID: 1\n" +
+                "ID: 5\n" +
                 "Name: Product tester\n" +
                 "Employer: ACME\n" +
                 "Location: Desert\n" +
@@ -80,7 +80,7 @@ public class JobTest {
                 new PositionType("Quality control"), new CoreCompetency(""));
 
         String output = "\n"+
-                "ID: 1\n" +
+                "ID: 4\n" +
                 "Name: Product tester\n" +
                 "Employer: ACME\n" +
                 "Location: Data not available\n" +
