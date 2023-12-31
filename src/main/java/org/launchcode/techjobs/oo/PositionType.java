@@ -22,8 +22,4 @@ public class PositionType extends JobField{
         return Objects.hash(getId());
     }
 
-
-    // Getters and Setters:
-
-
 }

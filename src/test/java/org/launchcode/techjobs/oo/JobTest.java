@@ -1,13 +1,12 @@
 package org.launchcode.techjobs.oo;
 
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
 
 public class JobTest {
-    //TODO: Create your unit tests here
 
     @Test
     public void testSettingJobId(){
@@ -49,10 +48,10 @@ public class JobTest {
 
     @Test
     public void testToStringStartsAndEndsWithNewLine(){
-        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
+        Job job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-        String string = job.toString();
+        String string = job3.toString();
 
         assertTrue(string.startsWith(System.lineSeparator()));
         assertTrue(string.endsWith(System.lineSeparator()));
@@ -60,7 +59,7 @@ public class JobTest {
 
     @Test
     public void testToStringContainsCorrectLabelsAndData(){
-        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
+        Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         String output = "\n"+
@@ -70,13 +69,13 @@ public class JobTest {
                 "Location: Desert\n" +
                 "Position Type: Quality control\n" +
                 "Core Competency: Persistence\n" ;
-        assertEquals(output, job.toString());
+        assertEquals(output, job4.toString());
 
     }
 
     @Test
     public void testToStringHandlesEmptyField(){
-        Job job = new Job("Product tester", new Employer("ACME"), new Location(""),
+        Job job5 = new Job("Product tester", new Employer("ACME"), new Location(""),
                 new PositionType("Quality control"), new CoreCompetency(""));
 
         String output = "\n"+
@@ -86,14 +85,14 @@ public class JobTest {
                 "Location: Data not available\n" +
                 "Position Type: Quality control\n" +
                 "Core Competency: Data not available\n" ;
-        assertEquals(output, job.toString());
+        assertEquals(output, job5.toString());
     }
 
     @Test
     public void testToStringHandlesEmptyInstantiation(){
-        Job job = new Job();
+        Job job6 = new Job();
         String output = "OOPS! This job does not seem to exist.";
 
-        assertEquals(output, job.toString());
+        assertEquals(output, job6.toString());
     }
 }
